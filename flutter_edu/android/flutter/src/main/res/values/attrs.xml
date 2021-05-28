@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundImageView">
+        <attr name="android:radius"/>
+        <attr name="android:topLeftRadius" />
+        <attr name="android:topRightRadius" />
+        <attr name="android:bottomLeftRadius" />
+        <attr name="android:bottomRightRadius" />
+        <attr name="android:resizeClip"/>
+        <attr name="forceCircle" format="boolean|reference"/>
+        <attr name="roundBackgroundEnable" format="boolean|reference"/>
+    </declare-styleable>
+</resources>

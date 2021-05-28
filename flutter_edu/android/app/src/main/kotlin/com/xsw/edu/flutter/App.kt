@@ -1,7 +1,7 @@
 package com.xsw.edu.flutter
 
 import android.app.Application
-import com.xsw.flutter.AndroidContext
+import com.xsw.flutter.FlutterManager
 
 /**
  * ClassName: [App]
@@ -13,7 +13,7 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        AndroidContext.init(this)
+        FlutterManager.init(this)
     }
 
 }

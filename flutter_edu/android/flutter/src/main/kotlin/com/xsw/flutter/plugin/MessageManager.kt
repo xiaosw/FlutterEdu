@@ -1,6 +1,5 @@
-package com.xsw.flutter.bridge
+package com.xsw.flutter.plugin
 
-import android.nfc.Tag
 import android.util.Log
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.BasicMessageChannel

@@ -51,7 +51,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  var log = MethodChannel("com.xsw.flutter/log");
+  var log = MethodChannel("${Global.NATIVE_PLUGIN_PREFIX}/log");
   BasicMessageChannel _messageChannel;
 
   void _incrementCounter() {
@@ -123,6 +123,19 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            Expanded(child: Align(
+              alignment: FractionalOffset.center,
+              child: AndroidView(viewType: '${Global.NATIVE_PLUGIN_PREFIX}/round_image_view',
+                  creationParams: {
+                    "width" : -1,
+                    "height" : 100,
+                    "forceCircle":true,
+                    "resizeClip":false,
+                    "background":"#ff00ff"
+                  },
+                  creationParamsCodec: StandardMessageCodec()
+              ),
+            )),
           ],
         ),
       ),

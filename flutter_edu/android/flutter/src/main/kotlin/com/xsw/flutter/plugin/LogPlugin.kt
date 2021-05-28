@@ -1,4 +1,4 @@
-package com.xsw.flutter.bridge
+package com.xsw.flutter.plugin
 
 import android.content.Context
 import android.util.Log

@@ -2,6 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 
+class Global {
+  static const NATIVE_PLUGIN_PREFIX = "com.xsw.flutter.plugin";
+}
+
 class Utils {
   static bool isNull(Object obj) {
     return null == obj;
@@ -19,7 +23,7 @@ class Utils {
 }
 
 class PlatformLog {
-  static const MethodChannel _platformLog = const MethodChannel("com.xsw.flutter/log");
+  static const MethodChannel _platformLog = const MethodChannel("${Global.NATIVE_PLUGIN_PREFIX}/log");
   static const _KEY_TAG = "tag";
   static const _KEY_MESSAGE = "message";
 

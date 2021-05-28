@@ -1,4 +1,4 @@
-package com.xsw.flutter.bridge
+package com.xsw.flutter.plugin
 
 import android.content.Context
 import android.util.Log
@@ -16,19 +16,16 @@ import java.lang.Exception
 abstract class FlutterPlugin(
         protected val context: Context,
         flutterEngine: FlutterEngine
-) : MethodChannel.MethodCallHandler {
+) : MethodChannel.MethodCallHandler, PluginNameProvider {
 
     val TAG = javaClass.simpleName
-
-    val channelName
-        get() = "${providerPackageName()}/${providerName()}"
 
     override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
         Log.v(TAG, "onMethodCall: ${call.method}(${call.arguments})")
         onMethodInvoke(call, result)
     }
 
-    protected open fun providerPackageName() = PLUGIN_PACKAGE_NAME
+    override fun providerPackageName() = PLUGIN_PACKAGE_NAME
 
     fun callError(result: MethodChannel.Result,
               errorMessage: String? = null,
@@ -41,12 +38,10 @@ abstract class FlutterPlugin(
         }
     }
 
-    protected abstract fun providerName() : String
-
     abstract fun onMethodInvoke(method: MethodCall, result: MethodChannel.Result)
 
     companion object {
-        const val PLUGIN_PACKAGE_NAME = "com.xsw.flutter"
+        const val PLUGIN_PACKAGE_NAME = "com.xsw.flutter.plugin/"
         const val CODE_ERROR = "-1"
     }
 }
