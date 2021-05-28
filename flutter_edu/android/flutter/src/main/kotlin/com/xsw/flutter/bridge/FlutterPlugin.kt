@@ -24,7 +24,7 @@ abstract class FlutterPlugin(
         get() = "${providerPackageName()}/${providerName()}"
 
     override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
-        Log.e(TAG, "onMethodCall: ${call.method}(${call.arguments})")
+        Log.v(TAG, "onMethodCall: ${call.method}(${call.arguments})")
         onMethodInvoke(call, result)
     }
 

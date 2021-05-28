@@ -2,6 +2,22 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 
+class Utils {
+  static bool isNull(Object obj) {
+    return null == obj;
+  }
+
+  static bool hasNull([ dynamic arguments ]) {
+    for (var arg in arguments) {
+      if(isNull(arg)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+}
+
 class PlatformLog {
   static const MethodChannel _platformLog = const MethodChannel("com.xsw.flutter/log");
   static const _KEY_TAG = "tag";

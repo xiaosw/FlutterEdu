@@ -38,6 +38,7 @@ class LogPlugin(
                 }
                 "e" -> {
                     Log.e(tag, message)
+                    MessageManager.globalSend("message from native.")
                 }
             }
             result.success(true)

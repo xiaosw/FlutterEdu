@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_edu/standard.dart';
@@ -50,6 +52,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   var log = MethodChannel("com.xsw.flutter/log");
+  BasicMessageChannel _messageChannel;
 
   void _incrementCounter() {
     setState(() {
@@ -59,6 +62,13 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+      if (Utils.isNull(_messageChannel)) {
+        print("register message receiver");
+        _messageChannel = BasicMessageChannel("com.xsw.flutter.message/global", StringCodec());
+        _messageChannel.setMessageHandler((message) async {
+          print("receiver message------------------------>$message");
+        });
+      }
       PlatformLog.e("main", "$_counter");
     });
   }

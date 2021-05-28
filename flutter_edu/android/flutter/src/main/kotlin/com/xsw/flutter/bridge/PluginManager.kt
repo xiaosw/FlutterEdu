@@ -13,7 +13,9 @@ import io.flutter.plugin.common.MethodChannel
  */
 object PluginManager {
 
-    fun register(context: Context, flutterEngine: FlutterEngine) {
+    fun init(context: Context, flutterEngine: FlutterEngine) {
+        MessageManager.init(flutterEngine)
+
         val messenger = flutterEngine.dartExecutor.binaryMessenger
         registerPlugin(messenger, LogPlugin(context, flutterEngine))
     }
