@@ -160,6 +160,7 @@ class _MainViewPageState extends State<MainViewPage> {
                   '$_counter',
                   style: Theme.of(context).textTheme.headline4,
                 ),
+                Image.asset('images/test.jpeg'),
                 Expanded(child: Align(
                   alignment: FractionalOffset.center,
                   child: AndroidView(viewType: '${Global.NATIVE_PLUGIN_PREFIX}/round_image_view',
@@ -193,7 +194,13 @@ class _MainViewPageState extends State<MainViewPage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ), //
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "label", activeIcon: Text("设置")),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "label", activeIcon: Text("设置")),
+        ],
+      ),
     );
   }
 }
