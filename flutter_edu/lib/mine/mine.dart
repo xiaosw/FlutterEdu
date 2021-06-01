@@ -45,12 +45,24 @@ class _MineLayoutState extends State<_MineLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          BackButton(color: Colors.red,
-              onPressed: _onBack)
-        ],
-      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(width: double.infinity, height: 100, color: Colors.red,),
+            Container(width: double.infinity, height: 100, color: Colors.blue,),
+            Container(width: double.infinity, height: 100, color: Colors.red,),
+            Container(width: double.infinity, height: 100, color: Colors.blue,),
+            Container(width: double.infinity, height: 100, color: Colors.red,),
+            Container(width: double.infinity, height: 100, color: Colors.blue,),
+            Container(width: double.infinity, height: 100, color: Colors.red,),
+            Container(width: double.infinity, height: 100, color: Colors.blue,),
+            Container(width: double.infinity, height: 100, color: Colors.red,),
+            Container(width: double.infinity, height: 100, color: Colors.blue,),
+            Container(width: double.infinity, height: 100, color: Colors.red,),
+            Container(width: double.infinity, height: 100, color: Colors.blue,)
+          ],
+        ),
+      )
     );
   }
 

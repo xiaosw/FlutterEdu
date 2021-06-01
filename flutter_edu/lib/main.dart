@@ -95,10 +95,10 @@ class _MainViewPageState extends State<MainViewPage> {
       }
       PlatformLog.e("main", "$_counter");
       // Navigator.of(context).push(new MaterialPageRoute(builder: (context) => new MinePage()));
-      Fluttertoast.showToast(
-          msg: "Toast",
-          backgroundColor: Colors.black45);
-      // Navigator.of(context).push(SlidingAroundRoute(MinePage()));
+      // Fluttertoast.showToast(
+      //     msg: "Toast",
+      //     backgroundColor: Colors.black45);
+      Navigator.of(context).push(SlidingAroundRoute(MinePage()));
     });
   }
 
@@ -178,7 +178,7 @@ class _MainViewPageState extends State<MainViewPage> {
                     child: Text("motion back")
                     , onWillPop: () async {
                       Fluttertoast.showToast(msg: "back");
-                      return false;
+                      return true;
                 })
               ],
             ),
