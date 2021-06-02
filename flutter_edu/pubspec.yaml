@@ -77,3 +77,9 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
     - images/test.jpeg
+    - images/ic_app_list_dark.png
+    - images/ic_app_list_light.png
+    - images/ic_featured_dark.png
+    - images/ic_featured_light.png
+    - images/ic_mine_dark.png
+    - images/ic_mine_light.png
